@@ -13,6 +13,9 @@ clock = pygame.time.Clock()
 
 game = Game()
 
+GAME_UPDATE = pygame.USEREVENT 
+pygame.time.set_timer(GAME_UPDATE, 200)  # Update every 200 milliseconds
+
 while True: 
     for event in pygame.event.get():
         if event.type == pygame.QUIT: 
@@ -25,10 +28,16 @@ while True:
                 game.move_right()
             elif event.key == pygame.K_DOWN:
                 game.move_down()
+            elif event.key == pygame.K_UP:
+                game.rotate()
+        if event.type == GAME_UPDATE:
+            game.move_down() 
 
     #Screen drawing        
     screen.fill(dark_purple)
     game.draw(screen)
+    
+
     pygame.display.update()
     clock.tick(60)  #frame rate of 60 
 
