@@ -4,9 +4,12 @@ class Colours:
     red = (240, 15, 15) 
     orange = (225, 115, 18) 
     yellow = (237, 234, 4) 
-    purple = (166, 0, 247) 
+    purple = (100, 0, 200) 
     cyan = (20, 205, 210) 
     blue = (14, 64, 216) 
+    white = (255, 255, 255)
+    dark_purple = (170, 0, 250)
+    lilac = (200, 100, 250)
 
     @classmethod
     def get_cell_color(cls):

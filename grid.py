@@ -49,6 +49,11 @@ class Grid:
             self.grid[row][col] = 0
 
 
+    def reset(self):
+        for row in range(self.num_rows):
+            for col in range(self.num_cols):
+                self.grid[row][col] = 0
+
     def clear_full_row(self):
         completed = 0 
         for row in range(self.num_rows - 1, 0, -1): 
@@ -63,6 +68,6 @@ class Grid:
         for row in range(self.num_rows):
             for col in range(self.num_cols): 
                 cell_value = self.grid[row][col] 
-                cell_rectangle = pygame.Rect(col * self.cell_size +1, row * self.cell_size +1,
+                cell_rectangle = pygame.Rect(col * self.cell_size +10, row * self.cell_size +10,
                 self.cell_size -1, self.cell_size -1)
                 pygame.draw.rect(screen, self.colors[cell_value], cell_rectangle)
